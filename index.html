@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <title></title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
        body {
            background-color: black;
@@ -12,6 +11,7 @@
            color :lightslategrey;
        }
     </style>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
   </head>
   <body>
       <h3 align="center"><span style="color:red;">{ </span>CodeSpace <span style="color:red;">}</span></h3>
@@ -19,11 +19,22 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6">
-            <div class="card">
+            <div class="card w-150 text-center">
               <div class="card-body">
-                <h4 class="card-title course-title">Course title</h4>
-                <p class="card-text">course full description and quotation</p>
-                <a href="#" class="btn btn-secondary apply">apply</a>
+                <img src="images/machine_learning.jpg" alt="card image top" class="card-image-top" height="150px" width="auto">
+                <h4 class="card-title " id="course-title">Course title</h4>
+                <p class="card-text" id="course-content">course full description and quotation</p>
+                <button href="#" class="btn btn-dark btn-block">apply</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6">
+            <div class="card w-150 text-center">
+              <div class="card-body">
+                <img src="images/game_design.jpg" alt="card image top" class="card-image-top" height="150px" width="auto">
+                <h4 class="card-title" id="course-title">Course title</h4>
+                <p class="card-text" id="course-content">course full description and quotation</p>
+                <button href="#" class="btn btn-dark btn-block">apply</button>
               </div>
             </div>
           </div>
@@ -72,7 +83,7 @@
         title : "Introduction to Machine Learning" ,
         length : 67 ,
         languages : ['python3'],
-        description : "Learning how machines make decisions using trees structures" ,
+        description : "Learning how machines make decisions using complex algorithms and logic trees" ,
         difficulty : "Advanced" ,
         cost : 15678
    };
@@ -91,10 +102,13 @@
    var courses = [Software_engineering_course , compiler_design_course,machine_learning_course , game_design_course];
 
    $(document).ready(function(){
-       var index = 0 ;
-       while ( index < courses.length ){
-            $('.card').append('<div class="card"><div class="card-body"><h4 class="card-title course-title">Course title</h4><p class="card-text">course full description and quotation</p><a href="#" class="btn btn-secondary apply">apply</a></div></div>');
-            idexnd
-       }
+      var index = 0 , title ;
+      while ( index < 2 ){
+          title = courses[index].title ;
+          change_course = $('course-title');
+          change_course.innerHTML = title ;
+          index++;
+      }
    });
+   debugger;
 </script>
