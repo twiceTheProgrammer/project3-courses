@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+       body {
+           background-color: black;
+           margin-top: 15px ;
+           color :lightslategrey;
+       }
+    </style>
+  </head>
+  <body>
+      <h3 align="center"><span style="color:red;">{ </span>CodeSpace <span style="color:red;">}</span></h3>
+      <br>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="card-title course-title">Course title</h4>
+                <p class="card-text">course full description and quotation</p>
+                <a href="#" class="btn btn-secondary apply">apply</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+<script type="text/javascript">
+   var course = {
+
+      title : "Software engineering",
+      length : 140 ,
+      languages : ['java' ,'Fortran'],
+      description : "Introduction to structured numeric programming" ,
+      difficulty : "Beginner" ,
+      cost : 24500
+
+   }
+   function newCourse(data){
+
+        this.title = data.title ;
+        this.length = data.length ;
+        this.languages = data.languages ;
+        this.description = data.description ;
+        this.difficulty = data.difficulty ;
+
+   }
+   var Software_engineering_course_data = {
+
+        title : "Software engineering" ,
+        length : 72 ,
+        languages : ['Java' , 'C'],
+        description : "Learning how to build basic softwares for desktops and small devices",
+        difficulty : "Intermediate" ,
+        cost : 27500
+   };
+   var game_design_data = {
+        title : "Game design" ,
+        length : 65 ,
+        languages : ['Visual basic' , 'Swift' , 'C#'],
+        description : "Intermediate game design introduction" ,
+        difficulty : "beginner" ,
+        cost : 17345
+   };
+   var machine_learning_data = {
+        title : "Introduction to Machine Learning" ,
+        length : 67 ,
+        languages : ['python3'],
+        description : "Learning how machines make decisions using trees structures" ,
+        difficulty : "Advanced" ,
+        cost : 15678
+   };
+   var compiler_design_data = {
+        title : "Advanced Compiler design",
+        length : 102 ,
+        languages : ['c'],
+        description : "Designing Gcc compilers" ,
+        difficulty : "Intermediate" ,
+        cost : 23240
+   };
+   var Software_engineering_course = new newCourse(Software_engineering_course_data);
+   var compiler_design_course = new newCourse(compiler_design_data);
+   var machine_learning_course = new newCourse(machine_learning_data);
+   var game_design_course = new newCourse(game_design_data);
+   var courses = [Software_engineering_course , compiler_design_course,machine_learning_course , game_design_course];
+
+   $(document).ready(function(){
+       var index = 0 ;
+       while ( index < courses.length ){
+            $('.card').append('<div class="card"><div class="card-body"><h4 class="card-title course-title">Course title</h4><p class="card-text">course full description and quotation</p><a href="#" class="btn btn-secondary apply">apply</a></div></div>');
+            idexnd
+       }
+   });
+</script>
