@@ -2,37 +2,42 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>{ CodeSpace } | Home</title>
+    <title>Project4 shopping cart</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <style>
-       body {
-           background-color: black;
-           margin-top: 15px ;
-           color :lightslategrey;
-       }
-    </style>
-    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="js/script.js"></script>
   </head>
   <body>
-      <h3 align="center"><span style="color:red;">{ </span> Code <span style="color:red;">}</span></h3>
-      <br>
-      <div class="container">
-        <div class="row">
-          <div class="col-xm-8">
-            <div class="row">
-              <div class="col-xm-6">
-                  <div class="card mr-4 text-center " id="course" style="width:250px;"></div>
-              </div>
-            </div>
-          </div>
-          <div class="col-xm-4">
-            <div class="card text-center" style="width:350px;">
-              <h3 class="card-title display-5">Course Checkout</h3>
-              <p class="card-text cart-checkout"></p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <h3 class="display-4 text-center">Shoping cart</h3>
+      <hr style="height:2px;background-color : lightslategrey;">
+      <table class="table table-striped table-dark">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Course title</th>
+              <th scope="col">Languages</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Cost</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">1</th>
+              <td>Mark</td>
+              <td>Otto</td>
+              <td>@mdo</td>
+            </tr>
+            <tr>
+              <th scope="row">2</th>
+              <td>Jacob</td>
+              <td>Thornton</td>
+              <td>@fat</td>
+            </tr>
+            <tr>
+              <th scope="row">3</th>
+              <td>Larry</td>
+              <td>the Bird</td>
+              <td>@twitter</td>
+            </tr>
+       </tbody>
+    </table>
   </body>
 </html>
