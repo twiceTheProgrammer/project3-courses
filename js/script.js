@@ -74,25 +74,23 @@ var game_design_course = new Course(game_design_data);
 var computer_systems_course = new Course(computer_systems_data);
 var courses = [compiler_design_course, machine_learning_course, game_design_course];
 
-var cart = {
-      course_titles : [],
-      course_languages : [],
-      total_costs : [],
-      };
+var cart_items = {
+    course_ids : [] ,
+    course_titles : [],
+    course_languages : [],
+    course_costs : [],
+    course_lengths : []
+};
 function Checkout(item){
 
+      this.course_id = item.id ;
       this.course_title = item.title;
       this.course_languages = item.languages;
       this.cost = item.cost;
+      this.course_length = item.length;
 
 };
-function calculateCost(items_cost){
-      let total_cost = 0 ;
-      for (var i = 0; i < items_cost.length; i++){
-          total_cost += items_cost[i] ;
-      };
-      return total_cost ;
-};
+
 $(document).ready(function() {
   'use strict';
   var course_id;
@@ -113,17 +111,43 @@ $(document).ready(function() {
   $('.join').on('click', function() {
          var course_id = $(this).data("course-data");
          addToCart(course_id);
+         displayCourses();
   });
 
   function addToCart(key){
-      let item ;
-      for (var index = 0 ; index < courses.length ; index++ ){
-          if ( courses[index].id == key ){
-              item = new Checkout(courses[index]);
-              cart.course_titles.push(item.course_title);
-              cart.course_languages.push(item.course_languages);
-              cart.total_costs.push(item.cost);
-          };
-      };
-  };
+        let count = 0 , item;
+        while ( count < courses.length ){
+            if ( courses[count].id == key) {
+
+                item = new Checkout(courses[count]);
+                cart_items.course_ids.push(item.course_id);
+                cart_items.course_titles.push(item.course_title);
+                cart_items.course_languages.push(item.course_languages);
+                cart_items.course_costs.push(item.cost);
+                cart_items.course_lengths.push(item.course_length);
+
+            }
+            count++;
+        }
+        return cart_items ;
+  }
+  function displayCourses(){
+
+      let  total_cost = 0 , total_duration = 0 ;
+
+      for (var index = 0 ; index < cart_items.course_costs.length ; index++){
+        total_cost += cart_items.course_costs[index];
+        total_duration += cart_items.course_lengths[index];
+      }
+      $('.cart-checkout').html(
+              '<p> Course(s) title(s) : <br>'
+                    +cart_items.course_titles+'<br>'
+                    +'Skills to be aquired : <br>'
+                    +cart_items.course_languages+'<br>'
+                    +'Tuition Amount Due : R ' + total_cost +'<br>'
+                    +'Duration : ' + total_duration + ' Hours'
+                    +'</p>'
+      );
+  }
 });
+debugger;
